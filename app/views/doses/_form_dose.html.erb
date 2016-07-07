@@ -1,6 +1,6 @@
 <%= simple_form_for([@cocktail, @dose]) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Choisir un ingredient" %>
   <%= f.input :description %>
   <%= f.button :submit, class: "btn btn-lime" %>
 <% end %>

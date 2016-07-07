@@ -1,29 +1,30 @@
-<div class="text-center"><h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="text-center"><h1><%= @cocktail.name %></h1>
+<p>List of ingredients</p>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h2><%= @cocktail.name %></h2></li>
+      <hr>
     </div>
   </div>
+  <% @cocktail.doses.each do |dose| %>
+    <div class="row">
+      <div class="col-xs-11 col-sm-5 col-sm-offset-3">
+        <p><i class="fa fa-check" aria-hidden="true"></i><%= " #{dose.description } of #{dose.ingredient.name}"%></p>
+      </div>
+      <div class="col-xs-1 col-sm-1">
+        <%= link_to "Remove", cocktail_dose_path(dose.cocktail_id, dose.id), method: :delete, class: "btn btn-lime btn-xs" %>
+      </div>
+    </div>
+  <% end %>
 
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h4>List of ingredients</h4>
-      <ul>
-        <% @cocktail.doses.each do |dose| %>
-        <li><%= "#{dose.description } of #{dose.ingredient.name}" %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <hr>
       <%= link_to "Back to cocktails", cocktails_path, class: "btn btn-lime" %>
       <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail.id), class: "btn btn-lime" %>
+
     </div>
   </div>
 

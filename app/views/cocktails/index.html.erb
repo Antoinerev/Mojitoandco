@@ -1,19 +1,22 @@
 <div class="text-center">
   <h1>Mojito and Co</h1>
   <p>Best mojito-inspired cocktails</p>
-  <hr>
+  <hr width="400px">
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <ol>
-      <% @cocktails.each do |cocktail| %>
-        <li><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></li>
-      <% end %>
-      </ol>
+
+  <% @cocktails.each do |cocktail| %>
+    <div class="row">
+      <div class="col-xs-11 col-sm-5 col-sm-offset-3">
+        <%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %>
+      </div>
+      <div class="col-xs-1 col-sm-1">
+        <%= link_to "Remove", cocktail_path(cocktail.id), method: :delete, class: "btn btn-lime btn-xs" %>
+      </div>
     </div>
-  </div>
+  <% end %>
+
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= link_to "Create cocktail", new_cocktail_path, class: "btn btn-lime" %>
