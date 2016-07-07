@@ -1,0 +1,18 @@
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :description %>
+  <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <%= f.button :submit %>
+<% end %>
+
+<!-- bootstrap
+<select class="form-control">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+    <option value="four">Four</option>
+    <option value="five">Five</option>
+</select> -->
+
+<!-- , collection: Ingredient.all  -->
