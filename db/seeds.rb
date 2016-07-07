@@ -14,3 +14,5 @@ Ingredient.create(name: "sparkling water")
 Ingredient.create(name: "lime")
 Ingredient.create(name: "brown sugar")
 Ingredient.create(name: "dark rum")
+Ingredient.create(name: "champagne")
+
