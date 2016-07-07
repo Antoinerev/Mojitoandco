@@ -1,1 +1,17 @@
 @import "home";
+
+
+a, h1, h2, h3, h4, p, ul, ol, li {
+  color: #50B62D;
+}
+
+.btn-lime {
+  // background-color: #50B62D;
+  background: rgba(80, 182, 45, 0.7);
+  color: white;
+}
+
+.btn-lime:hover {
+  background: rgba(80, 182, 45, 1);
+  color: white;
+}

@@ -1,21 +1,22 @@
 <div class="text-center">
-  <h1>Cocktails#index</h1>
-  <p>Find me in app/views/cocktails/index.html.erb</p>
+  <h1>Mojito and Co</h1>
+  <p>Best mojito-inspired cocktails</p>
+  <hr>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <% @cocktails.each do |cocktail| %>
       <ol>
+      <% @cocktails.each do |cocktail| %>
         <li><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></li>
-      </ol>
       <% end %>
+      </ol>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <%= link_to "Create cocktail", new_cocktail_path %>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= link_to "Create cocktail", new_cocktail_path, class: "btn btn-lime" %>
     </div>
   </div>
 </div>
