@@ -5,6 +5,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <% if @cocktail[:photo].nil? %>
+        <% @cocktail.photo = "_none_iizdyg"  %>
+        <h2>Add your image</h2>
+        <%= render 'form_add_image' %>
+      <% else %>
+        <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+      <% end %>
       <hr>
     </div>
   </div>
