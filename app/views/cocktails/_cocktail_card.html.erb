@@ -1,0 +1,19 @@
+
+<div >
+    <div class="row">
+      <div class="col-xs-11 col-sm-5 col-sm-offset-3">
+
+          <%= link_to cocktail_path(cocktail.id) do %>
+
+          <% img_url = cocktail[:photo].nil? ? "http://res.cloudinary.com/antoinerev/image/upload/v1467991528/mrp8jpuge5s8tyjqrnxq.png" : cocktail.photo %>
+          <div class="card" style="background-image: url(<%= image_path img_url %>);">
+            <h4> <%= cocktail.name %></h4>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-xs-1 col-sm-1">
+        <%= link_to "Remove", cocktail_path(cocktail.id), method: :delete, class: "btn btn-lime btn-xs" %>
+      </div>
+    </div>
+
+</div>

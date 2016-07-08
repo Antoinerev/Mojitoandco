@@ -6,9 +6,10 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <% if @cocktail[:photo].nil? %>
-        <% @cocktail.photo = "_none_iizdyg"  %>
+        <% @cocktail.photo = "mrp8jpuge5s8tyjqrnxq"  %>
         <h2>Add your image</h2>
         <%= render 'form_add_image' %>
+        <%= cl_image_tag "http://res.cloudinary.com/antoinerev/image/upload/v1467991528/mrp8jpuge5s8tyjqrnxq.png", height: 300, width: 400, crop: :fill %>
       <% else %>
         <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
       <% end %>

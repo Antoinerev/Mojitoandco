@@ -7,14 +7,11 @@
 <div class="container">
 
   <% @cocktails.each do |cocktail| %>
-    <div class="row">
-      <div class="col-xs-11 col-sm-5 col-sm-offset-3">
-        <%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %>
-      </div>
-      <div class="col-xs-1 col-sm-1">
-        <%= link_to "Remove", cocktail_path(cocktail.id), method: :delete, class: "btn btn-lime btn-xs" %>
-      </div>
-    </div>
+
+
+      <%= render 'cocktail_card', cocktail: cocktail %>
+
+
   <% end %>
 
   <div class="row">
